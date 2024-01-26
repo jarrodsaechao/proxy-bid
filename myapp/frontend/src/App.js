@@ -1,10 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import { AppBar, Toolbar, Typography, Container, Button } from '@mui/material';
-import Home from './components/Home';
-import About from './components/About';
-import Contact from './components/Contact';
-import Services from './components/Services';
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Services from './pages/Services';
+import SignInSide from './templates/SignIn';
 
 function App() {
   return (
@@ -27,6 +28,9 @@ function App() {
             <Button color="inherit" component={Link} to="/services">
               Services
             </Button>
+            <Button color="inherit" component={Link} to="/login"> 
+              Login
+            </Button>
           </Toolbar>
         </AppBar>
 
@@ -36,6 +40,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/services" element={<Services />} />
+            <Route path="/login" element={<SignInSide />} />
           </Routes>
         </Container>
       </div>
